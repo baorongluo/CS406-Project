@@ -2,5 +2,11 @@
   "course_name": "Intro to Computer Science",
   "header": "Welcome!",
   "intro_paragraph": "This course teaches the fundamentals of programming.",
-  "show_footer": true
+  "email": "email@osu.edu",
+  "show_footer": true,
+  "modules": [
+    {"title": "Week 1: Introduction", "description": "Getting started with computing."},
+    {"title": "Week 2: Variables and Data Types", "description": "Learn about data representation."},
+    {"title": "Week 3: Control Flow", "description": "If statements, loops, and logic."}
+  ]
 }

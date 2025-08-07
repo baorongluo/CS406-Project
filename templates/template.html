@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to {{ course_name }}</title>
+</head>
+<body>
+  {% include 'header.html' %}  
+
+  <h2>Course Modules</h2>
+  <ul>
+    {% for module in modules %}
+      <li>
+        <strong>{{ module.title }}</strong><br>
+        {{ module.description }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if show_footer %}
+    {% include 'footer.html' %}  
+  {% endif %}
+</body>
+</html>

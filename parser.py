@@ -9,7 +9,7 @@ def main():
     parser.add_argument("variables", help="Path to the JSON variable file")
     parser.add_argument("-o", "--output", help="Output HTML file", default="output.html")
     args = parser.parse_args()
-
+  
     if not os.path.isfile(args.template):
         print(f"Template file not found: {args.template}")
         return
@@ -20,10 +20,15 @@ def main():
     with open(args.variables, 'r', encoding='utf-8') as f:
         variables = json.load(f)
 
-    env = Environment(loader=FileSystemLoader(searchpath='.'))
+    env = Environment(loader=FileSystemLoader(searchpath='templates'))
+
+    # Get the template from template.html
     template = env.get_template(os.path.basename(args.template))
+
+    # Render the template with the variables
     output = template.render(**variables)
 
+    # Write the rendered output to output file
     with open(args.output, 'w', encoding='utf-8') as f:
         f.write(output)
 
