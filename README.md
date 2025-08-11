@@ -15,9 +15,9 @@ This project demonstrates a simple templating engine for organizing Canvas cours
 pip install jinja2
 
 ### 2. Run the renderer
-python parser.py template.html variables.json -o preview.html
+python parser.py templates/template.html variables.json -o output.html
 
 ### 3. View the result
-Open preview.html in a browser.
+Open output.html in a browser.
 
 
